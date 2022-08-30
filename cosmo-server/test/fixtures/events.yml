@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  game: MyString
+  seats_required: 1
+  time_start: 2022-08-30 14:55:18
+  time_end: 2022-08-30 14:55:18
+  ticket_price: MyString
+
+two:
+  name: MyString
+  description: MyString
+  game: MyString
+  seats_required: 1
+  time_start: 2022-08-30 14:55:18
+  time_end: 2022-08-30 14:55:18
+  ticket_price: MyString
