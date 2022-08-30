@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_08_30_185823) do
   create_table "events", force: :cascade do |t|
-    t.integer "stadia_id"
+    t.integer "stadium_id"
     t.string "name"
     t.string "description"
     t.string "game"
