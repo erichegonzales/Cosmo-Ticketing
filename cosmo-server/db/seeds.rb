@@ -39,4 +39,24 @@ tekken_world_tour_2022 = Event.create(
     time_end: DateTime.new(2022, 12, 25, 24, 0, 0), 
     ticket_price: "130.99")
 
-puts "Creating users..." 
+puts "Creating users..."
+user_1 = User.create(
+    email: "ahnaf@cosmocenter.com", 
+    password: "cosmo1", 
+    is_admin: true)
+
+user_2 = User.create(
+    email: "eriche@cosmocenter.com",
+    password: "cosmo2",
+    is_admin: false)
+
+user_3 = User.create(
+    email: "mark@cosmocenter.com",
+    password: "cosmo3",
+    is_admin: false)
+
+user_4 = User.create(
+    email: "admin@cosmocenter.com",
+    password: "cosmo0",
+    is_admin: true)
+
