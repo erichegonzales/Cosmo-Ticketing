@@ -3,12 +3,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :events
   root 'events#index'
-  #GET
-  get 'events/:id', to: 'events#show'
-  #POST
+  # #GET
+  # get 'events/:id', to: 'events#show'
+  # #POST
+  # post 'events', to: 'events#create'
+  # #PATCH
+  # patch 'events/:id', to: 'events#update'
+  # #DELETE
 
-  #PATCH
 
-  #DELETE
+
 end

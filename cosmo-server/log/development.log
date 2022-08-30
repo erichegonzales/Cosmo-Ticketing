@@ -294,3 +294,506 @@ Migrating to CreateUsers (20220830185823)
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/theaters/1" for 127.0.0.1 at 2022-08-30 17:33:05 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/theaters/1"):
+  
+Started GET "/" for 127.0.0.1 at 2022-08-30 17:33:09 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 3836)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (1.6ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", nil], ["name", "COD fest"], ["description", "Call of duty event"], ["game", "Call of duty"], ["seats_required", 10], ["time_start", nil], ["time_end", nil], ["ticket_price", "50"], ["created_at", "2022-08-30 21:40:32.584451"], ["updated_at", "2022-08-30 21:40:32.584451"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-08-30 17:40:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.7ms | Allocations: 10449)
+
+
+Started GET "/" for ::1 at 2022-08-30 17:41:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as */*
+  Parameters: {"event"=>{}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 808)
+
+
+Started GET "/1" for ::1 at 2022-08-30 17:41:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+Started GET "/events/1" for ::1 at 2022-08-30 17:41:45 -0400
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"1", "event"=>{}}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:40:in `event_find'
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 4577)
+
+
+Started PATCH "/events/1" for ::1 at 2022-08-30 17:42:42 -0400
+Processing by EventsController#update as */*
+  Parameters: {"description"=>"Updated event description", "id"=>"1", "event"=>{"description"=>"Updated event description"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:40:in `event_find'
+[31mUnpermitted parameters: :id, :event. Context: { controller: EventsController, action: update, request: #<ActionDispatch::Request:0x000000011fb6c298>, params: {"description"=>"Updated event description", "controller"=>"events", "action"=>"update", "id"=>"1", "event"=>{"description"=>"Updated event description"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:24:in `update'
+  [1m[36mEvent Update (0.4ms)[0m  [1m[33mUPDATE "events" SET "description" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["description", "Updated event description"], ["updated_at", "2022-08-30 21:42:42.953391"], ["id", 1]]
+  ↳ app/controllers/events_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:24:in `update'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 3098)
+
+
+Started GET "/events/1" for ::1 at 2022-08-30 17:42:48 -0400
+Processing by EventsController#show as */*
+  Parameters: {"description"=>"Updated event description", "id"=>"1", "event"=>{"description"=>"Updated event description"}}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:40:in `event_find'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 695)
+
+
+Started POST "/events" for ::1 at 2022-08-30 17:47:28 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000011f383a68>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", nil], ["name", "smash event"], ["description", "who's your main"], ["game", "nintendo"], ["seats_required", 15], ["time_start", nil], ["time_end", nil], ["ticket_price", "100"], ["created_at", "2022-08-30 21:47:28.929400"], ["updated_at", "2022-08-30 21:47:28.929400"]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 4438)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-30 17:47:37 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 1041)
+
+
+Started GET "/events" for ::1 at 2022-08-30 17:48:50 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.9ms | Allocations: 2892)
+
+
+Started DELETE "/events/2" for ::1 at 2022-08-30 17:49:04 -0400
+Processing by EventsController#destroy as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "id"=>"2", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:48:in `event_find'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:37:in `destroy'
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/events_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:37:in `destroy'
+No template found for EventsController#destroy, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 2.2ms | Allocations: 2704)
+
+
+Started GET "/events/2" for ::1 at 2022-08-30 17:49:09 -0400
+Processing by EventsController#show as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "id"=>"2", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:48:in `event_find'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 538)
+
+
+Started GET "/events" for ::1 at 2022-08-30 17:49:12 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 814)
+
+
+Started POST "/events" for ::1 at 2022-08-30 18:02:02 -0400
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :users, through :tickets
+                             ^
+):
+  
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started POST "/events" for ::1 at 2022-08-30 18:02:44 -0400
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :users, through :tickets
+                             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started POST "/events" for ::1 at 2022-08-30 18:02:56 -0400
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/" for ::1 at 2022-08-30 18:52:09 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/markdelgado/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/markdelgado/.rvm/gems/ruby-2.7.4/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 577)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 5281)
+
+
+Started GET "/" for ::1 at 2022-08-30 18:52:28 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 736)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:54:56 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 726)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:54:57 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 749)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:54:57 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 746)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:54:58 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 744)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:10 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 10ms (Allocations: 746)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets,
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:10 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 776)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:11 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 746)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:11 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 746)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:11 -0400
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 744)
+
+
+  
+SyntaxError (/Users/markdelgado/Projects/Cosmo-Ticketing/cosmo-server/app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+    has_many :tickets
+             ^
+):
+  
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/event.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/events_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2022-08-30 18:55:32 -0400
+Processing by EventsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 10.0ms | ActiveRecord: 0.8ms | Allocations: 12306)
+
+
+Started GET "/" for ::1 at 2022-08-30 18:55:39 -0400
+Processing by EventsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.9ms | Allocations: 6815)
+
+
+Started POST "/events" for ::1 at 2022-08-30 18:55:54 -0400
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x0000000108dc4e58>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5177)
+
+
+Started GET "/events" for ::1 at 2022-08-30 18:55:59 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 816)
+
+
+Started GET "/events" for ::1 at 2022-08-30 18:56:07 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 814)
+
+
+Started POST "/events" for ::1 at 2022-08-30 18:56:19 -0400
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000010c8d7518>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+Completed 201 Created in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 903)
+
+
+Started GET "/events" for ::1 at 2022-08-30 18:56:28 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 828)
+
+
+Started GET "/" for ::1 at 2022-08-30 18:57:18 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 814)
+
+
+Started POST "/" for ::1 at 2022-08-30 18:58:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/events" for ::1 at 2022-08-30 18:59:06 -0400
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000012a56ea70>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 899)
+
+
+Started POST "/events" for ::1 at 2022-08-30 19:00:44 -0400
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000010a440998>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+Completed 201 Created in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 900)
+
+
+Started GET "/events" for ::1 at 2022-08-30 19:00:56 -0400
+Processing by EventsController#index as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 815)
+
+
+Started POST "/events" for ::1 at 2022-08-30 19:01:27 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x0000000108fca0e0>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+Completed 201 Created in 13ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 7147)
+
+
+Started POST "/events" for ::1 at 2022-08-30 19:04:09 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+[31mUnpermitted parameter: :event. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x0000000108dbe3a0>, params: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "controller"=>"events", "action"=>"create", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mEvent Create (1.2ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", nil], ["name", "smash event"], ["description", "who's your main"], ["game", "nintendo"], ["seats_required", 15], ["time_start", nil], ["time_end", nil], ["ticket_price", "100"], ["created_at", "2022-08-30 23:04:09.946600"], ["updated_at", "2022-08-30 23:04:09.946600"]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 5036)
+
+
+Started GET "/events/3" for ::1 at 2022-08-30 19:05:11 -0400
+Processing by EventsController#show as */*
+  Parameters: {"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100", "id"=>"3", "event"=>{"name"=>"smash event", "description"=>"who's your main", "game"=>"nintendo", "seats_required"=>15, "ticket_price"=>"100"}}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:49:in `event_find'
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 4556)
+
+
+Started PATCH "/events/3" for ::1 at 2022-08-30 19:05:53 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+
+    "description": "updated description",
+
+}
+Processing by EventsController#update as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 688)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/events_controller.rb:49:in `event_find'
+app/controllers/events_controller.rb:23:in `update'
+Started PATCH "/events/3" for ::1 at 2022-08-30 19:05:59 -0400
+Processing by EventsController#update as */*
+  Parameters: {"description"=>"updated description", "id"=>"3", "event"=>{"description"=>"updated description"}}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:49:in `event_find'
+[31mUnpermitted parameters: :id, :event. Context: { controller: EventsController, action: update, request: #<ActionDispatch::Request:0x0000000108cb2c68>, params: {"description"=>"updated description", "controller"=>"events", "action"=>"update", "id"=>"3", "event"=>{"description"=>"updated description"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:25:in `update'
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "description" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["description", "updated description"], ["updated_at", "2022-08-30 23:05:59.736704"], ["id", 3]]
+  ↳ app/controllers/events_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:25:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 2566)
+
+
+Started GET "/events/3" for ::1 at 2022-08-30 19:06:04 -0400
+Processing by EventsController#show as */*
+  Parameters: {"description"=>"updated description", "id"=>"3", "event"=>{"description"=>"updated description"}}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:49:in `event_find'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 691)
+
+
+Started GET "/events" for ::1 at 2022-08-30 19:06:08 -0400
+Processing by EventsController#index as */*
+  Parameters: {"description"=>"updated description", "event"=>{"description"=>"updated description"}}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1018)
+
+
+Started GET "/" for ::1 at 2022-08-30 19:06:15 -0400
+Processing by EventsController#index as */*
+  Parameters: {"description"=>"updated description", "event"=>{"description"=>"updated description"}}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 969)
+
+
