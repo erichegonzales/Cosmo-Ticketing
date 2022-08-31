@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :events
   root 'events#index'
+  get 'images', to: 'images#show_image'
   # #GET
   # get 'events/:id', to: 'events#show'
   # #POST
