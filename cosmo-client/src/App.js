@@ -7,6 +7,7 @@ import Checkout from "./components/Checkout";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
+import Nav from "./components/Nav";
 
 function App() {
   return (

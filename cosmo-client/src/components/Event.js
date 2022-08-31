@@ -16,8 +16,8 @@ const Event = ({ event }) => {
     
   return (
     <li className="event-cards">
-      <div className="card">
-        <img
+      {/* <div className="card">
+        <img className="card-image"
           src={pictureUrl}
           alt={name}
           className="card_image"
@@ -32,7 +32,7 @@ const Event = ({ event }) => {
             <p>{ticket_price}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </li>
   );
 };

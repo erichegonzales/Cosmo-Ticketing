@@ -17,12 +17,14 @@ const Home = () => {
 
 
   return (
-    <div id="home">
-      <div id="welcome-div">
-        <h1 id="welcome-title">Welcome to Cosmo Center</h1>
-        <h3 id="welcome-subtitle">The home of the greatest eSports competitions in the cosmos.</h3>
+    <div className="home">
+      <div className="welcome-div">
+        <h1 className="welcome-title">Welcome to Cosmo Center</h1>
+        <h3 className="welcome-subtitle">
+          The home of the greatest eSports competitions in the cosmos.
+        </h3>
       </div>
-      <EventsContainer events={events}/>
+      <EventsContainer events={events} />
     </div>
   );
 };
