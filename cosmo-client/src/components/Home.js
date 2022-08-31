@@ -14,8 +14,6 @@ const Home = () => {
     fetchData().catch(console.error);
   }, []);
 
-    console.log(events);
-
   return (
     <div className="home">
       <div className="welcome-div">
