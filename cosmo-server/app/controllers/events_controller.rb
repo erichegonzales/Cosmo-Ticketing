@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     end
     def show
         event= event_find
-        render json: event
+        render json: event.as_json(methods: [:tickets])
     end
 
     #POST
