@@ -605,3 +605,131 @@ Migrating to CreateUsers (20220830185823)
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStadium Create (0.1ms)[0m  [1m[32mINSERT INTO "stadia" ("name", "address", "no_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cosmo Center"], ["address", "212 88 Johanneshov Stockholm, Sweden"], ["no_seats", 3], ["created_at", "2022-08-31 01:10:10.036298"], ["updated_at", "2022-08-31 01:10:10.036298"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 2], ["name", "PGL Stockholmn 2022"], ["description", "The first and only CS:GO Major in 2022. The prize pool will amount to $2,000,000. The competition is scheduled to take place in the capital of Sweden, Stockholm on September 3rd. The tournament will be hosted at Ericcson Globe Arena. If the safety conditions are appropriate, the organizer PGL promises to let fans watch matches right at the arena. Matches of the tournament will be broadcasted in the 4K resolution for the first time."], ["game", "Counter-Strike Global Offensive"], ["seats_required", 3], ["time_start", "2022-09-03 12:30:00"], ["time_end", "2022-09-03 16:30:00"], ["ticket_price", "420.69"], ["created_at", "2022-08-31 01:10:10.046566"], ["updated_at", "2022-08-31 01:10:10.046566"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 2], ["name", "Blast Premiere 2022"], ["description", "BLAST Premier is the world’s leading Counter-Strike tournament series, hosting the best players and teams, offering opportunities to regions across the globe and crowning the world champions of CS:GO. Up to 32 of the best teams take part in the seven BLAST Premier events across the year with a combined prize pool of $2,475,000 on the line."], ["game", "Counter-Strike Global Offensive"], ["seats_required", 3], ["time_start", "2022-10-26 16:00:00"], ["time_end", "2022-10-26 22:00:00"], ["ticket_price", "6900.00"], ["created_at", "2022-08-31 01:10:10.051178"], ["updated_at", "2022-08-31 01:10:10.051178"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 2], ["name", "Tekken World Tour Qualifiers 2022"], ["description", "The TEKKEN World Tour series from Bandai Namco Entertainment Inc.along with production partner Reset Gaming brings you an international online and offline tournament series where the best compete for bragging rights in their region. The TEKKEN World Tour has 5 Offline Master Events and 13 Regional Final Events across the globe to highlight the best talent in the world! Some Regions may not have a Regional Final, in which case the top player in the leaderboard for that Region will be eligible to participate in the Global Finals. Step into the arena and see if you have what it takes!"], ["game", "TEKKEN 7"], ["seats_required", 3], ["time_start", "2022-12-25 20:00:00"], ["time_end", "2022-12-26 00:00:00"], ["ticket_price", "130.99"], ["created_at", "2022-08-31 01:10:10.057452"], ["updated_at", "2022-08-31 01:10:10.057452"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "ahnaf@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:10:10.064134"], ["updated_at", "2022-08-31 01:10:10.064134"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "eriche@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:10:10.068945"], ["updated_at", "2022-08-31 01:10:10.068945"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "mark@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:10:10.073036"], ["updated_at", "2022-08-31 01:10:10.073036"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 1], ["created_at", "2022-08-31 01:10:10.077047"], ["updated_at", "2022-08-31 01:10:10.077047"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["event_id", 4], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.083724"], ["updated_at", "2022-08-31 01:10:10.083724"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["event_id", 5], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.088047"], ["updated_at", "2022-08-31 01:10:10.088047"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["event_id", 6], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.092251"], ["updated_at", "2022-08-31 01:10:10.092251"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["event_id", 6], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.096073"], ["updated_at", "2022-08-31 01:10:10.096073"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["event_id", 4], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.100344"], ["updated_at", "2022-08-31 01:10:10.100344"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["event_id", 5], ["seat_id", nil], ["created_at", "2022-08-31 01:10:10.105846"], ["updated_at", "2022-08-31 01:10:10.105846"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStadia (20220830185248)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "stadia" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "no_seats" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220830185248"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEvents (20220830185518)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "stadium_id" integer, "name" varchar, "description" varchar, "game" varchar, "seats_required" integer, "time_start" datetime(6), "time_end" datetime(6), "ticket_price" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220830185518"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20220830185748)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "seat_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220830185748"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20220830185823)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password" varchar, "is_admin" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220830185823"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-31 01:12:40.044977"], ["updated_at", "2022-08-31 01:12:40.044977"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStadium Create (0.1ms)[0m  [1m[32mINSERT INTO "stadia" ("name", "address", "no_seats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cosmo Center"], ["address", "212 88 Johanneshov Stockholm, Sweden"], ["no_seats", 3], ["created_at", "2022-08-31 01:12:41.829170"], ["updated_at", "2022-08-31 01:12:41.829170"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 1], ["name", "PGL Stockholmn 2022"], ["description", "The first and only CS:GO Major in 2022. The prize pool will amount to $2,000,000. The competition is scheduled to take place in the capital of Sweden, Stockholm on September 3rd. The tournament will be hosted at Ericcson Globe Arena. If the safety conditions are appropriate, the organizer PGL promises to let fans watch matches right at the arena. Matches of the tournament will be broadcasted in the 4K resolution for the first time."], ["game", "Counter-Strike Global Offensive"], ["seats_required", 3], ["time_start", "2022-09-03 12:30:00"], ["time_end", "2022-09-03 16:30:00"], ["ticket_price", "420.69"], ["created_at", "2022-08-31 01:12:41.837012"], ["updated_at", "2022-08-31 01:12:41.837012"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 1], ["name", "Blast Premiere 2022"], ["description", "BLAST Premier is the world’s leading Counter-Strike tournament series, hosting the best players and teams, offering opportunities to regions across the globe and crowning the world champions of CS:GO. Up to 32 of the best teams take part in the seven BLAST Premier events across the year with a combined prize pool of $2,475,000 on the line."], ["game", "Counter-Strike Global Offensive"], ["seats_required", 3], ["time_start", "2022-10-26 16:00:00"], ["time_end", "2022-10-26 22:00:00"], ["ticket_price", "6900.00"], ["created_at", "2022-08-31 01:12:41.841491"], ["updated_at", "2022-08-31 01:12:41.841491"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Create (0.1ms)[0m  [1m[32mINSERT INTO "events" ("stadium_id", "name", "description", "game", "seats_required", "time_start", "time_end", "ticket_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["stadium_id", 1], ["name", "Tekken World Tour Qualifiers 2022"], ["description", "The TEKKEN World Tour series from Bandai Namco Entertainment Inc.along with production partner Reset Gaming brings you an international online and offline tournament series where the best compete for bragging rights in their region. The TEKKEN World Tour has 5 Offline Master Events and 13 Regional Final Events across the globe to highlight the best talent in the world! Some Regions may not have a Regional Final, in which case the top player in the leaderboard for that Region will be eligible to participate in the Global Finals. Step into the arena and see if you have what it takes!"], ["game", "TEKKEN 7"], ["seats_required", 3], ["time_start", "2022-12-25 20:00:00"], ["time_end", "2022-12-26 00:00:00"], ["ticket_price", "130.99"], ["created_at", "2022-08-31 01:12:41.846987"], ["updated_at", "2022-08-31 01:12:41.846987"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "ahnaf@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:12:41.854283"], ["updated_at", "2022-08-31 01:12:41.854283"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "eriche@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:12:41.858543"], ["updated_at", "2022-08-31 01:12:41.858543"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "mark@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 0], ["created_at", "2022-08-31 01:12:41.862675"], ["updated_at", "2022-08-31 01:12:41.862675"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@cosmocenter.com"], ["password", "[FILTERED]"], ["is_admin", 1], ["created_at", "2022-08-31 01:12:41.866921"], ["updated_at", "2022-08-31 01:12:41.866921"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.873234"], ["updated_at", "2022-08-31 01:12:41.873234"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 2], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.877382"], ["updated_at", "2022-08-31 01:12:41.877382"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 3], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.881239"], ["updated_at", "2022-08-31 01:12:41.881239"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["event_id", 3], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.885280"], ["updated_at", "2022-08-31 01:12:41.885280"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 1], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.889375"], ["updated_at", "2022-08-31 01:12:41.889375"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTicket Create (0.1ms)[0m  [1m[32mINSERT INTO "tickets" ("user_id", "event_id", "seat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 2], ["seat_id", nil], ["created_at", "2022-08-31 01:12:41.893342"], ["updated_at", "2022-08-31 01:12:41.893342"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" ORDER BY "tickets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]

@@ -43,7 +43,7 @@ puts "Creating users..."
 user_1 = User.create(
     email: "ahnaf@cosmocenter.com", 
     password: "cosmo1", 
-    is_admin: true)
+    is_admin: false)
 
 user_2 = User.create(
     email: "eriche@cosmocenter.com",
@@ -60,3 +60,34 @@ user_4 = User.create(
     password: "cosmo0",
     is_admin: true)
 
+puts "Creating tickets..."
+
+ticket_1 = Ticket.create(
+    user_id: user_1.id,
+    event_id: pgl_stockholmn_2022.id,
+)
+
+ticket_2 = Ticket.create(
+    user_id: user_1.id,
+    event_id: blast_premiere_2022.id,
+)
+
+ticket_3 = Ticket.create(
+    user_id: user_1.id,
+    event_id: tekken_world_tour_2022.id,
+)
+
+ticket_4 = Ticket.create(
+    user_id: user_2.id,
+    event_id: tekken_world_tour_2022.id,
+)
+
+ticket_5 = Ticket.create(
+    user_id: user_3.id,
+    event_id: pgl_stockholmn_2022.id,
+)
+
+ticket_6 = Ticket.create(
+    user_id: user_3.id,
+    event_id: blast_premiere_2022.id,
+)
