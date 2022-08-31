@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import EventsContainer from "./EventsContainer";
 
 const Home = () => {
-  const { events, setEvents } = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +14,7 @@ const Home = () => {
     fetchData().catch(console.error);
   }, []);
 
-
+    console.log(events);
 
   return (
     <div className="home">

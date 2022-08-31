@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   let isAdmin = false;
@@ -12,9 +12,7 @@ const Nav = () => {
         <Link to="/login">Login</Link>
       </li>
       <li className="nav-link">
-        isAdmin ?<Navigate to="/admin">Profile</Navigate> :
-        <Navigate to="/user">Profile</Navigate>
-        {/* test later */}
+        <Link to={ isAdmin ? '/admin' : '/user'}>Profile</Link>
       </li>
     </ul>
   );
