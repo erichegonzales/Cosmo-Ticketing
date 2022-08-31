@@ -3,15 +3,13 @@ class EventsController < ApplicationController
     #GET
     def index
         event = Event.all
-        render json: event
+        # render json: event
+        render json: event.as_json(include: [:tickets, :images])
     end
     def show
         event= event_find
-        render json: event.as_json(methods: [:tickets])
-           
-    end
-
-    
+        render json: event.as_json(include: [:tickets, :images])
+    end    
 
     #POST
     def create
