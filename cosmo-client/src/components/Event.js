@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Event = ({ event }) => {
+  const navigate = useNavigate()
   const banner = event.images[0].url
   const event_picture = event.images[1].url
   const event_picture_2 = event.images[2].url
   const { name, description, game, time_start, time_end, ticket_price} = event
-  
 
   return (
     <li className="event-cards">
@@ -22,6 +22,7 @@ const Event = ({ event }) => {
             <p>{ticket_price}</p>
           </div>
         </div>
+        <button onClick={() => navigate('/checkout')}>Buy Ticket</button>
       </div>
     </li>
   );
