@@ -91,3 +91,59 @@ ticket_6 = Ticket.create(
     user_id: user_3.id,
     event_id: blast_premiere_2022.id,
 )
+
+puts "Creating images"
+pgl_image_1 = Image.create(
+    event_id: pgl_stockholmn_2022.id,
+    name: "banner",
+    url: "https://isport.ua/i/25/91/09/0/2591090/image_main/3062f65e0ba34f96693569f00ef2fd46-quality_70Xresize_1Xallow_enlarge_0Xw_835Xh_0.jpg"
+)
+
+pgl_image_2 = Image.create(
+    event_id: pgl_stockholmn_2022.id,
+    name: "event_picture",
+    url: "https://csgo2asia.com/wp-content/uploads/2021/10/Screenshot_154.png"
+)
+
+pgl_image_3 = Image.create(
+    event_id: pgl_stockholmn_2022.id,
+    name: "event_picture_2",
+    url: "https://cdn.akamai.steamstatic.com/apps/csgo/images/blog/2021_stockholm_champions.png"
+)
+
+blast_image_1 = Image.create(
+    event_id: blast_premiere_2022.id,
+    name: "banner",
+    url: "https://resources.esportsinsider.com/esportsinsider/2021/05/Fantasyexpo-x-PGL.jpg"
+)
+
+blast_image_2 = Image.create(
+    event_id: blast_premiere_2022.id,
+    name: "event_picture",
+    url: "https://cdn-images.win.gg/resize/w/1000/format/webp/type/progressive/fit/cover/path/wp/uploads/2021/08/blast-ignores-valves-ruling-allows-coaches-in-spring-showdown.jpg"
+)
+
+blast_image_3 = Image.create(
+    event_id: blast_premiere_2022.id,
+    name: "event_picture_2",
+    url: "https://img-cdn.hltv.org/gallerypicture/nlwj5A4A2xto39jG6wMbPM.jpg?ixlib=java-2.1.0&w=1600&s=f93c4c992715e0c794fe501a224f2384"
+)
+
+tekken_image_1 = Image.create(
+    event_id: tekken_world_tour_2022.id,
+    name: "banner",
+    url: "https://gaminglyfe.com/wp-content/uploads/2022/06/Tekken-World-tour-2022.jpg"
+)
+
+tekken_image_2 = Image.create(
+    event_id: tekken_world_tour_2022.id,
+    name: "event_picture",
+    url: "https://pbs.twimg.com/media/DvN5cSFXQAEGnBh?format=jpg&name=900x900"
+)
+
+tekken_image_3 = Image.create(
+    event_id: tekken_world_tour_2022.id,
+    name: "event_picture_2",
+    url: "https://static.invenglobal.com/upload/image/2017/05/25/i1495749693212366.png"
+)
+
