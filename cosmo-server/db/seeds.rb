@@ -120,7 +120,7 @@ blast_image_1 = Image.create(
 blast_image_2 = Image.create(
     event_id: blast_premiere_2022.id,
     name: "event_picture",
-    url: "https://cdn-images.win.gg/resize/w/1000/format/webp/type/progressive/fit/cover/path/wp/uploads/2021/08/blast-ignores-valves-ruling-allows-coaches-in-spring-showdown.jpg"
+    url: "https://www.eposaudio.com/contentassets/cefd3a0e424e422e9c5dc34d3e21fb00/epos_x_premier_white_v2.jpg"
 )
 
 blast_image_3 = Image.create(

@@ -17,7 +17,8 @@ const Home = () => {
   return (
     <div className="home">
       <div className="welcome-div">
-        <h1 className="welcome-title">Welcome to Cosmo Center</h1>
+        <h2 className="welcome-title">Welcome to the </h2>
+        <h1 className="welcome-splash">COSMO CENTER</h1>
         <h3 className="welcome-subtitle">
           The home of the greatest eSports competitions in the cosmos.
         </h3>
