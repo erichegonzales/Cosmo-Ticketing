@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import '../App.css';
 
 const Event = ({ event, setEventChosen }) => {
   const navigate = useNavigate();
@@ -22,9 +23,15 @@ const Event = ({ event, setEventChosen }) => {
   return (
     <li className="event-cards">
       <div className="card">
-        <img className="banner" src={banner} alt={name} />
-        <img className="card-image1" src={event_picture} alt={name} />
-        <img className="card-image2" src={event_picture_2} alt={name} />
+        <div className="banner-section">
+          <img className="banner" src={banner} alt={name} />
+        </div>
+        <div className="more-section">
+          <img className="card-image1" src={event_picture} alt={name} />
+          <img className="card-image2" src={event_picture_2} alt={name} />
+        </div>
+        
+        
         <div className="card_content">
           <div className="card_title">{name}</div>
           <p className="card_text">{description}</p>
