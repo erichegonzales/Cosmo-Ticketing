@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function App() {
   //if user-id is 0, no one is logged in / if 1, logged in
-  const [loginId, setLoginId] = useState(0)
+  const [loginId, setLoginId] = useState(0);
   const [userId, setUserId] = useState(0)
   const [eventChosen, setEventChosen] = useState({
     user_id: 0,
