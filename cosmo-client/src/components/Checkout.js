@@ -6,10 +6,10 @@ const Checkout = ({ eventChosen, userId, loginId }) => {
   const navigate = useNavigate();
 
   const handleBuyTicket = async () => {
-    if (loginId == 0) {
-      alert("Please log in before buying a ticket!");
-      navigate("/login");
-    }
+    // if (loginId == 0) {
+    //   alert("Please log in before buying a ticket!");
+    //   navigate("/login");
+    // }
 
     // console.log(
     //   userId,
@@ -43,6 +43,8 @@ const Checkout = ({ eventChosen, userId, loginId }) => {
       } catch(error) {
         console.log(error)
       }
+
+      
   };
 
   const handleCancelTicket = () => {

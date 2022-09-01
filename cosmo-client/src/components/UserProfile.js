@@ -13,7 +13,7 @@ const UserProfile = ({ loginId, setLoginId, userId }) => {
 
    useEffect(() => {
       const fetchData = async () => {
-        const res = await fetch(`http://localhost:3000/users/${1}`);
+        const res = await fetch(`http://localhost:3000/users/${2}`);
         const req = await res.json();
         setCurrUser({
           id: req.id,
