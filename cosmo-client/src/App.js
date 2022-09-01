@@ -23,6 +23,9 @@ function App() {
     time_end: "",
     ticket_price: ""
   });
+
+  localStorage.setItem('LOGIN_STATUS', 0) 
+  localStorage.setItem('USER_ID', 0)
   
   return (
     <div className="App">

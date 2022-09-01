@@ -6,7 +6,7 @@ const Checkout = ({ eventChosen, userId, loginId }) => {
   const navigate = useNavigate();
 
   const handleBuyTicket = async () => {
-    if (loginId == 0) {
+    if (localStorage.getItem('LOGIN_STATUS')== 0) {
       alert("Please log in before buying a ticket!");
       navigate("/login");
     }

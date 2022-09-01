@@ -4,7 +4,7 @@ const UserProfile = ({ loginId, setLoginId, userId }) => {
   const navigate = useNavigate();
   
   const handleLogOut = () => {
-    setLoginId(0);
+    localStorage.setItem('LOGIN_STATUS',0);
     alert("Successfully logged out!")
     navigate("/");
   };

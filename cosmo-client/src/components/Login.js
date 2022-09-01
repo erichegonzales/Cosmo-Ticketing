@@ -28,8 +28,8 @@ const Login = ({ loginId, setLoginId, setUserId }) => {
     // });
     for (let user of users) {
       if (user.email === email && user.password === password) {
-        setLoginId(1);
-        setUserId(user.id)
+        localStorage.setItem('LOGIN_STATUS', 1)
+        localStorage.setItem('USER_ID', user.id)
         console.log(user.email, user.password, user.id);
         alert(`Successfully logged in: Welcome ${user.name}!`);
         navigate("/");
@@ -57,6 +57,7 @@ const Login = ({ loginId, setLoginId, setUserId }) => {
 
   return (
     <div>
+       {console.log("checking", localStorage.getItem('LOGIN_STATUS'))}
       <h1>Log Into Cosmo Center</h1>
       <form onSubmit={handleLogin}>
         <div className="input-container">
