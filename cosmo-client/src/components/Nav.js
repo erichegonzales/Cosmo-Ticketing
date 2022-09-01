@@ -16,6 +16,9 @@ const Nav = () => {
         <li className="nav-link">
           <Link to={ isAdmin ? '/admin' : '/user'}>Profile</Link>
         </li>
+        <li className="nav-link">
+          <Link to="/add-event">addevent</Link>
+        </li>
       </ul>
     </div>
   );

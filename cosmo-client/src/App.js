@@ -14,13 +14,13 @@ function App() {
   //if user-id is 0 no one is logged in
   const [loginId, setLoginId] = useState(0)
 
-  
+
   return (
     <div className="App">
       <BrowserRouter>
       <Nav />
         <Routes>
-          <Route path="/add-event" element={<AddEvent />} />
+          <Route path="/AddEvent" element={<AddEvent />} />
           <Route path="/admin" element={<AdminProfile />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/" element={<Home />} />
