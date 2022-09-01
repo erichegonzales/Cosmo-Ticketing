@@ -111,3 +111,40 @@
   padding: 10px;
   font-family: text-stuff;
 }
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: rgba(59, 15, 135, 0.3);
+  margin: 20px;
+}
+
+.banner_section {
+  width: 600px;
+}
+
+.more_section {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.banner {
+  max-width: 600px;
+}
+
+.card-image1 {
+  max-width: 300px;
+}
+
+.card-image2 {
+  max-width: 300px;
+}
+
+.card_content {
+  color: white;
+  text-align: left;
+  padding: 10px;
+  font-family: text-stuff;
+}
