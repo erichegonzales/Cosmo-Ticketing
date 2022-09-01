@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 const Checkout = ({ eventChosen }) => {
-  // console.log(eventChosen)
+  console.log(eventChosen)
     const navigate = useNavigate();
 
 

@@ -10650,3 +10650,41 @@ Processing by EventsController#index as */*
 Completed 200 OK in 56ms (Views: 1.8ms | ActiveRecord: 1.5ms | Allocations: 6856)
 
 
+Started GET "/events" for ::1 at 2022-09-01 09:00:23 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.8ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+Completed 200 OK in 412ms (Views: 6.4ms | ActiveRecord: 5.6ms | Allocations: 6857)
+
+
+Started GET "/events" for ::1 at 2022-09-01 09:00:23 -0400
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.1ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mTicket Load (0.2ms)[0m  [1m[34mSELECT "tickets".* FROM "tickets" WHERE "tickets"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/controllers/events_controller.rb:7:in `index'
+Completed 200 OK in 67ms (Views: 3.5ms | ActiveRecord: 3.0ms | Allocations: 6856)
+
+
