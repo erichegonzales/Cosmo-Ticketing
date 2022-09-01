@@ -23,7 +23,10 @@ const Home = ({ setEventChosen }) => {
           The home of the greatest eSports competitions in the cosmos.
         </h3>
       </div>
-      <EventsContainer events={events} setEventChosen={setEventChosen} />
+      <EventsContainer
+        events={events}
+        setEventChosen={setEventChosen}
+      />
     </div>
   );
 };
