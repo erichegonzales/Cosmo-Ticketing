@@ -1,32 +1,3 @@
-// import { Button } from "react-bootstrap";
-// const AddEvent = ({ event }) => {
-//   //const { name, description, game, time_start, time_end, ticket_price } = event;
-
-//   return (
-//   <div>
-//     <form>
-//       <Button></Button>
-//     <h1>Add New Event</h1>
-//     <input type='text' placeholder="Event Name"></input>
-//     <br/>
-//     <input type='text' placeholder="Brief Description of Event"></input>
-//     <br/>
-//     <input type='number' placeholder='Seats required'></input>
-//     <br/>
-//     <input type="text" placeholder="Image-URL"></input>
-//     <br/>
-//     <input type='date'></input>
-//     <input type='time'></input>
-//     <br></br>
-    
-//       </form>
-//   </div>
-//   );
-// };
-
-// export default AddEvent;
-
-//seats available using :"seats_required"
 
 
 import { React, useState } from 'react';
