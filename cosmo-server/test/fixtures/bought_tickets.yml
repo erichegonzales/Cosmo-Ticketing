@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  banner: MyString
+  name: MyString
+  game: MyString
+  ticket_price: MyString
+  time_start: 2022-09-01 09:38:40
+  time_end: 2022-09-01 09:38:40
+
+two:
+  banner: MyString
+  name: MyString
+  game: MyString
+  ticket_price: MyString
+  time_start: 2022-09-01 09:38:40
+  time_end: 2022-09-01 09:38:40
