@@ -15,12 +15,13 @@ function App() {
   const [loginId, setLoginId] = useState(0)
   const [userId, setUserId] = useState(0)
   const [eventChosen, setEventChosen] = useState({
+    user_id: 0,
+    banner: "",
     name: "",
     game: "",
     time_start: "",
     time_end: "",
-    ticket_price: "",
-    banner: "",
+    ticket_price: ""
   });
   
   return (
@@ -32,7 +33,13 @@ function App() {
           <Route path="/admin" element={<AdminProfile />} />
           <Route
             path="/checkout"
-            element={<Checkout eventChosen={eventChosen} />}
+            element={
+              <Checkout
+                eventChosen={eventChosen}
+                userId={userId}
+                loginId={loginId}
+              />
+            }
           />
           <Route path="/" element={<Home setEventChosen={setEventChosen} />} />
           <Route
@@ -45,7 +52,16 @@ function App() {
               />
             }
           />
-          <Route path="/profile" element={<UserProfile />} />
+          <Route
+            path="/profile"
+            element={
+              <UserProfile
+                loginId={loginId}
+                setLoginId={setLoginId}
+                userId={userId}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

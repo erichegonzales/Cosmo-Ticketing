@@ -17,17 +17,30 @@ const Login = ({ loginId, setLoginId, setUserId }) => {
   }, []);
 
   const validateLogin = (email, password) => {
-    users.forEach((user) => {
-      if (user.email == email && user.password == password) {
+    // users.forEach((user) => {
+    //   if (user.email == email && user.password == password) {
+    //     setLoginId(1);
+    //     setUserId(user.id)
+    //     console.log(user.email, user.password, user.id);
+    //     alert(`Successfully logged in: Welcome ${user.name}!`);
+    //     navigate("/profile");
+    //   }
+    // });
+    for (let user of users) {
+      if (user.email === email && user.password === password) {
         setLoginId(1);
         setUserId(user.id)
         console.log(user.email, user.password, user.id);
         alert(`Successfully logged in: Welcome ${user.name}!`);
-        navigate("/profile");
+        navigate("/");
+        break;
       }
-    });
-    if (loginId == 0) alert("Invalid login!");
-  };
+      // if (user.email !== email) {
+      //   alert('Invalid login!')
+      //   break;
+      // }
+  }
+}
 
   const handleLogin = (e) => {
     e.preventDefault();

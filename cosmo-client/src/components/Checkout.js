@@ -1,25 +1,54 @@
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
-const Checkout = ({ eventChosen }) => {
-  console.log(eventChosen)
-    const navigate = useNavigate();
+const Checkout = ({ eventChosen, userId, loginId }) => {
+  // console.log(eventChosen);
+  const navigate = useNavigate();
 
+  const handleBuyTicket = async () => {
+    if (loginId == 0) {
+      alert("Please log in before buying a ticket!");
+      navigate("/login");
+    }
 
-  const handleBuyTicket = () => {
-     const fetchData = async () => {
-       const res = await fetch("http://localhost:3000/events");
-       const req = await res.json();
-      //  setEvents(req);
-     };
+    // console.log(
+    //   userId,
+    //   eventChosen.banner,
+    //   eventChosen.name,
+    //   eventChosen.game,
+    //   eventChosen.ticket_price,
+    //   eventChosen.time_start,
+    //   eventChosen.time_end
+    // );
 
-     fetchData().catch(console.error);
-  }
+    try {
+      const res = await fetch("http://localhost:3000/bought_tickets", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            user_id: userId,
+            banner: eventChosen.banner,
+            name: eventChosen.name,
+            game: eventChosen.game,
+            ticket_price: eventChosen.ticket_price,
+            time_start: eventChosen.time_start,
+            time_end: eventChosen.time_end
+          })
+        });
+        const req = await res.json();
+        console.log(req);
+      } catch(error) {
+        console.log(error)
+      }
+  };
 
-   const handleCancelTicket = () => {
-      alert('Come back next time!')
-      navigate("/home");
-   };
+  const handleCancelTicket = () => {
+    alert("Come back next time!");
+    navigate("/");
+  };
 
   return (
     <div>
@@ -39,3 +68,5 @@ const Checkout = ({ eventChosen }) => {
 };
 
 export default Checkout;
+
+

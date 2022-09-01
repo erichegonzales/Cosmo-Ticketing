@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TicketBoughtsControllerTest < ActionDispatch::IntegrationTest
+class BoughtTicketsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
