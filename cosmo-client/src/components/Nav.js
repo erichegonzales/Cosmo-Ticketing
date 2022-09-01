@@ -5,7 +5,7 @@ import '../App.css';
 const Nav = () => {
   return (
     <div className="nav-bar">
-       <ul className="nav">
+      <ul className="nav">
         <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
@@ -13,7 +13,10 @@ const Nav = () => {
           <Link to="/login">Login</Link>
         </li>
         <li className="nav-link">
-          <Link to='/profile'>Profile</Link>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li className="nav-link">
+          <Link to="/addevent">Add Event</Link>
         </li>
       </ul>
     </div>

@@ -32,6 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_133839) do
     t.datetime "time_start"
     t.datetime "time_end"
     t.string "ticket_price"
+    t.string "banner"
+    t.string "image_1"
+    t.string "image_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
