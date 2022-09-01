@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import EventsContainer from "./EventsContainer";
 
-const Home = () => {
+const Home = ({ setEventChosen }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Home = () => {
           The home of the greatest eSports competitions in the cosmos.
         </h3>
       </div>
-      <EventsContainer events={events} />
+      <EventsContainer events={events} setEventChosen={setEventChosen} />
     </div>
   );
 };

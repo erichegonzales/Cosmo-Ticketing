@@ -41,21 +41,25 @@ tekken_world_tour_2022 = Event.create(
 
 puts "Creating users..."
 user_1 = User.create(
+    name: "Ahnaf",
     email: "ahnaf@cosmocenter.com", 
     password: "cosmo1", 
     is_admin: false)
 
 user_2 = User.create(
+    name: "Eriche",
     email: "eriche@cosmocenter.com",
     password: "cosmo2",
     is_admin: false)
 
 user_3 = User.create(
+    name: "Mark",
     email: "mark@cosmocenter.com",
     password: "cosmo3",
     is_admin: false)
 
 user_4 = User.create(
+    name: "Admin",
     email: "admin@cosmocenter.com",
     password: "cosmo0",
     is_admin: true)

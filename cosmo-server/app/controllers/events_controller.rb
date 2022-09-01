@@ -2,12 +2,12 @@ class EventsController < ApplicationController
     skip_before_action :verify_authenticity_token
     #GET
     def index
-        event = Event.all
+        events = Event.all
         # render json: event
-        render json: event.as_json(include: [:tickets, :images])
+        render json: events.as_json(include: [:tickets, :images])
     end
     def show
-        event= event_find
+        event = event_find
         render json: event.as_json(include: [:tickets, :images])
     end    
 
@@ -28,8 +28,6 @@ class EventsController < ApplicationController
         else 
             render_not_found_error
         end
-   
-
     end 
 
     #DELETE
@@ -42,15 +40,14 @@ class EventsController < ApplicationController
         end
     end
 
-
     private
 
-
     def event_find
-    event=  Event.find_by(id: params[:id])
+    event = Event.find_by(id: params[:id])
     end
+
     def render_not_found_error
-        render json: {error: 'Event Not found'}, status: :not_found
+        render json: {error: 'Event Not Found'}, status: :not_found
     end
 
     def event_params

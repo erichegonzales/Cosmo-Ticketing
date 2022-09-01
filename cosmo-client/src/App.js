@@ -11,21 +11,41 @@ import Nav from "./components/Nav";
 import { useState } from 'react';
 
 function App() {
-  //if user-id is 0 no one is logged in
+  //if user-id is 0, no one is logged in / if 1, logged in
   const [loginId, setLoginId] = useState(0)
-
+  const [userId, setUserId] = useState(0)
+  const [eventChosen, setEventChosen] = useState({
+    name: "",
+    game: "",
+    time_start: "",
+    time_end: "",
+    ticket_price: "",
+    banner: "",
+  });
   
   return (
     <div className="App">
       <BrowserRouter>
-      <Nav />
+        <Nav />
         <Routes>
           <Route path="/add-event" element={<AddEvent />} />
           <Route path="/admin" element={<AdminProfile />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login  setLoginId={setLoginId}/>} />
-          <Route path="/user" element={<UserProfile />} />
+          <Route
+            path="/checkout"
+            element={<Checkout eventChosen={eventChosen} />}
+          />
+          <Route path="/" element={<Home setEventChosen={setEventChosen} />} />
+          <Route
+            path="/login"
+            element={
+              <Login
+                loginId={loginId}
+                setLoginId={setLoginId}
+                setUserId={setUserId}
+              />
+            }
+          />
+          <Route path="/profile" element={<UserProfile />} />
         </Routes>
       </BrowserRouter>
     </div>
