@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ loginId, setLoginId, setUserId }) => {
+const Login = ({ loginId, userId, setLoginId, setUserId }) => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [errorMessages, setErrorMessages] = useState({});
@@ -29,7 +29,7 @@ const Login = ({ loginId, setLoginId, setUserId }) => {
     for (let user of users) {
       if (user.email === email && user.password === password) {
         setLoginId(1);
-        setUserId(user.id)
+        setUserId(user.id);
         console.log(user.email, user.password, user.id);
         alert(`Successfully logged in: Welcome ${user.name}!`);
         navigate("/");
@@ -39,8 +39,8 @@ const Login = ({ loginId, setLoginId, setUserId }) => {
       //   alert('Invalid login!')
       //   break;
       // }
-  }
-}
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();

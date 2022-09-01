@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddEvent from "./components/AddEvent";
 import AdminProfile from "./components/AdminProfile";
@@ -8,12 +8,12 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import Nav from "./components/Nav";
-import { useState } from 'react';
+import { useState } from "react";
 
 function App() {
   //if user-id is 0, no one is logged in / if 1, logged in
-  const [loginId, setLoginId] = useState(0)
-  const [userId, setUserId] = useState(0)
+  const [loginId, setLoginId] = useState(0);
+  const [userId, setUserId] = useState(0);
   const [eventChosen, setEventChosen] = useState({
     user_id: 0,
     banner: "",
@@ -21,15 +21,15 @@ function App() {
     game: "",
     time_start: "",
     time_end: "",
-    ticket_price: ""
+    ticket_price: "",
   });
-  
+
   return (
     <div className="App">
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/add-event" element={<AddEvent />} />
+          <Route path="/addevent" element={<AddEvent />} />
           <Route path="/admin" element={<AdminProfile />} />
           <Route
             path="/checkout"
@@ -47,6 +47,7 @@ function App() {
             element={
               <Login
                 loginId={loginId}
+                userId={userId}
                 setLoginId={setLoginId}
                 setUserId={setUserId}
               />
@@ -57,8 +58,9 @@ function App() {
             element={
               <UserProfile
                 loginId={loginId}
-                setLoginId={setLoginId}
                 userId={userId}
+                setLoginId={setLoginId}
+                setUserId={setUserId}
               />
             }
           />

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = ({ eventChosen, userId, loginId }) => {
@@ -23,26 +23,28 @@ const Checkout = ({ eventChosen, userId, loginId }) => {
 
     try {
       const res = await fetch("http://localhost:3000/bought_tickets", {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            user_id: userId,
-            banner: eventChosen.banner,
-            name: eventChosen.name,
-            game: eventChosen.game,
-            ticket_price: eventChosen.ticket_price,
-            time_start: eventChosen.time_start,
-            time_end: eventChosen.time_end
-          })
-        });
-        const req = await res.json();
-        console.log(req);
-      } catch(error) {
-        console.log(error)
-      }
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+          banner: eventChosen.banner,
+          name: eventChosen.name,
+          game: eventChosen.game,
+          ticket_price: eventChosen.ticket_price,
+          time_start: eventChosen.time_start,
+          time_end: eventChosen.time_end,
+        }),
+      });
+      const req = await res.json();
+      console.log(req);
+    } catch (error) {
+      console.log(error);
+    }
+
+    alert("Ticket bought!");
   };
 
   const handleCancelTicket = () => {
@@ -68,5 +70,3 @@ const Checkout = ({ eventChosen, userId, loginId }) => {
 };
 
 export default Checkout;
-
-

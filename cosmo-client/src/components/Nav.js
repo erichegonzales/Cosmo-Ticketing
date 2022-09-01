@@ -1,12 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../App.css';
+import "../App.css";
 
 const Nav = () => {
-  let isAdmin = false;
-
   return (
     <div className="nav-bar">
-       <ul className="nav">
+      <ul className="nav">
         <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
@@ -14,8 +13,11 @@ const Nav = () => {
           <Link to="/login">Login</Link>
         </li>
         <li className="nav-link">
-          <Link to={ isAdmin ? '/admin' : '/user'}>Profile</Link>
+          <Link to="/profile">Profile</Link>
         </li>
+        {/* <li className="nav-link">
+          <Link to="/addevent">Add Event</Link>
+        </li> */}
       </ul>
     </div>
   );

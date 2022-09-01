@@ -18,7 +18,11 @@ pgl_stockholmn_2022 = Event.create(
     seats_required: 3, 
     time_start: DateTime.new(2022, 9, 3, 12, 30, 0), 
     time_end: DateTime.new(2022, 9, 3, 16, 30, 0), 
-    ticket_price: "420.69")
+    ticket_price: "420.69",
+    banner: "https://isport.ua/i/25/91/09/0/2591090/image_main/3062f65e0ba34f96693569f00ef2fd46-quality_70Xresize_1Xallow_enlarge_0Xw_835Xh_0.jpg",
+    image_1: "https://csgo2asia.com/wp-content/uploads/2021/10/Screenshot_154.png",
+    image_2: "https://cdn.akamai.steamstatic.com/apps/csgo/images/blog/2021_stockholm_champions.png"
+)
 
 blast_premiere_2022 = Event.create(
     stadium_id: cosmo.id, name: "Blast Premiere 2022", 
@@ -27,7 +31,11 @@ blast_premiere_2022 = Event.create(
     seats_required: 3, 
     time_start: DateTime.new(2022, 10, 26, 16, 0, 0), 
     time_end: DateTime.new(2022, 10, 26, 22, 0, 0), 
-    ticket_price: "6900.00")
+    ticket_price: "6900.00",
+    banner: "https://resources.esportsinsider.com/esportsinsider/2021/05/Fantasyexpo-x-PGL.jpg",
+    image_1: "https://www.eposaudio.com/contentassets/cefd3a0e424e422e9c5dc34d3e21fb00/epos_x_premier_white_v2.jpg",
+    image_2: "https://img-cdn.hltv.org/gallerypicture/nlwj5A4A2xto39jG6wMbPM.jpg?ixlib=java-2.1.0&w=1600&s=f93c4c992715e0c794fe501a224f2384"
+)
 
 tekken_world_tour_2022 = Event.create(
     stadium_id: cosmo.id, 
@@ -37,7 +45,11 @@ tekken_world_tour_2022 = Event.create(
     seats_required: 3, 
     time_start: DateTime.new(2022, 12, 25, 20, 0, 0), 
     time_end: DateTime.new(2022, 12, 25, 24, 0, 0), 
-    ticket_price: "130.99")
+    ticket_price: "130.99",
+    banner: "https://gaminglyfe.com/wp-content/uploads/2022/06/Tekken-World-tour-2022.jpg",
+    image_1: "https://pbs.twimg.com/media/DvN5cSFXQAEGnBh?format=jpg&name=900x900",
+    image_2: "https://static.invenglobal.com/upload/image/2017/05/25/i1495749693212366.png"
+)
 
 puts "Creating users..."
 user_1 = User.create(
@@ -96,58 +108,4 @@ ticket_6 = Ticket.create(
     event_id: blast_premiere_2022.id,
 )
 
-puts "Creating images"
-pgl_image_1 = Image.create(
-    event_id: pgl_stockholmn_2022.id,
-    name: "banner",
-    url: "https://isport.ua/i/25/91/09/0/2591090/image_main/3062f65e0ba34f96693569f00ef2fd46-quality_70Xresize_1Xallow_enlarge_0Xw_835Xh_0.jpg"
-)
-
-pgl_image_2 = Image.create(
-    event_id: pgl_stockholmn_2022.id,
-    name: "event_picture",
-    url: "https://csgo2asia.com/wp-content/uploads/2021/10/Screenshot_154.png"
-)
-
-pgl_image_3 = Image.create(
-    event_id: pgl_stockholmn_2022.id,
-    name: "event_picture_2",
-    url: "https://cdn.akamai.steamstatic.com/apps/csgo/images/blog/2021_stockholm_champions.png"
-)
-
-blast_image_1 = Image.create(
-    event_id: blast_premiere_2022.id,
-    name: "banner",
-    url: "https://resources.esportsinsider.com/esportsinsider/2021/05/Fantasyexpo-x-PGL.jpg"
-)
-
-blast_image_2 = Image.create(
-    event_id: blast_premiere_2022.id,
-    name: "event_picture",
-    url: "https://www.eposaudio.com/contentassets/cefd3a0e424e422e9c5dc34d3e21fb00/epos_x_premier_white_v2.jpg"
-)
-
-blast_image_3 = Image.create(
-    event_id: blast_premiere_2022.id,
-    name: "event_picture_2",
-    url: "https://img-cdn.hltv.org/gallerypicture/nlwj5A4A2xto39jG6wMbPM.jpg?ixlib=java-2.1.0&w=1600&s=f93c4c992715e0c794fe501a224f2384"
-)
-
-tekken_image_1 = Image.create(
-    event_id: tekken_world_tour_2022.id,
-    name: "banner",
-    url: "https://gaminglyfe.com/wp-content/uploads/2022/06/Tekken-World-tour-2022.jpg"
-)
-
-tekken_image_2 = Image.create(
-    event_id: tekken_world_tour_2022.id,
-    name: "event_picture",
-    url: "https://pbs.twimg.com/media/DvN5cSFXQAEGnBh?format=jpg&name=900x900"
-)
-
-tekken_image_3 = Image.create(
-    event_id: tekken_world_tour_2022.id,
-    name: "event_picture_2",
-    url: "https://static.invenglobal.com/upload/image/2017/05/25/i1495749693212366.png"
-)
-
+puts 'Done seeding!'

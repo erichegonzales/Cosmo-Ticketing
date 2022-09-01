@@ -9,6 +9,9 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.datetime :time_start
       t.datetime :time_end
       t.string :ticket_price
+      t.string :banner
+      t.string :image_1
+      t.string :image_2
 
       t.timestamps
     end
