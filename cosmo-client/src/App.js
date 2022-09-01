@@ -29,7 +29,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/add-event" element={<AddEvent />} />
+          <Route path="/addevent" element={<AddEvent />} />
           <Route path="/admin" element={<AdminProfile />} />
           <Route
             path="/checkout"
