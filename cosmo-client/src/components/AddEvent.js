@@ -34,15 +34,10 @@ const AddEvent = () => {
   const handleClose = () => setShow(false);
 
   const defaultValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-    comments: ''
+    name: '',
+    description: '',
+    image: '',
+    seatsRequired: ''
   }
 
   const [values, setValues] = useState(defaultValues)
